@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    {% block content %}
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/superlatives.css') }}">
+    </head>
+    <body>
+        <div class='title'>
+            <h1>Superlatives Analysis</h1>
+        </div>
+        <div class='superlatives'>
+            <br>
+            <div class='row'>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/superlatives/fig1.png') }}">
+                    </div>
+                </div>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/superlatives/fig2.png') }}">
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/superlatives/fig3.png') }}">
+                    </div>
+                </div>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/superlatives/fig4.png') }}">
+                    </div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/superlatives/fig5.png') }}">
+                    </div>
+                </div>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/superlatives/fig6.png') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>

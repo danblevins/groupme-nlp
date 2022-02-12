@@ -35,16 +35,16 @@ data_subset.reset_index(inplace=True)
 data_subset = data_subset.sort_values(by=['avg_likes'], ascending=False)
 bar_chart(data=data_subset, x_axis="name", y_axis="avg_likes", title="Most Popular (Avg Number of Likes per Message)", name="fig1")
 
-data_subset = pd.DataFrame(my_data['name'].value_counts())
+data_subset = pd.DataFrame(data['name'].value_counts())
 data_subset.reset_index(inplace=True)
 data_subset.columns = ['name','msg_sent']
 bar_chart(data=data_subset, x_axis="name", y_axis="msg_sent", title="Most Talkative (Number of Messages Sent)", name='fig2')
 
-my_data['avg_message_len'] = my_data.message.str.split().str.len()
-data_subset = my_data.groupby('name').avg_message_len.mean().sort_values(ascending=False).reset_index()
+data['avg_message_len'] = data.message.str.split().str.len()
+data_subset = data.groupby('name').avg_message_len.mean().sort_values(ascending=False).reset_index()
 bar_chart(data=data_subset, x_axis="name", y_axis="avg_message_len", title="Most Verbose (Avg Message Length)", name='fig3')
 
-ats = my_data[my_data.message.str.contains(" @")==True]
+ats = data[data.message.str.contains(" @")==True]
 data_subset = ats.groupby("name").send_time.count().sort_values(ascending=False).reset_index()
 data_subset.columns = ['name','ats']
 bar_chart(data=data_subset, x_axis="name", y_axis="ats", title="Most Social (Number of Times @ing Someone)", name='fig4')
@@ -55,13 +55,5 @@ data_subset.columns = ['name','name_changes']
 bar_chart(data=data_subset, x_axis="name", y_axis="name_changes", title="Most Nicknames (Number of Name Changes)", name='fig5')
 
 # Time Series Analysis
-time_series_complete = my_data.set_index('send_time')
+time_series_complete = data.set_index('send_time')
 data_subset = analyze_time_series_data(data, column_name)
-
-
-
-
-
-
-
-

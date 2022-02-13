@@ -17,5 +17,6 @@ def filter_name_counts(data, count=60):
     data['name_counts'] = data['name'].value_counts()
     data['name_counts'] = data.groupby(['name']).transform('count')
     data = data[data['name_counts'] >= count]
+    data = data[data['name'] != 'GroupMe']
 
     return data

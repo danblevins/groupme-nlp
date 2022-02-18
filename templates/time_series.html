@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    {% block content %}
+    <head>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/content.css') }}">
+    </head>
+    <body>
+        <div class='title'>
+            <h1>Time Series NLP Analysis</h1>
+        </div>
+        <div class='content'>
+            <br>
+            <div class='row'>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/time_series/fig1.png') }}">
+                    </div>
+                </div>
+                <div class='column'>
+                    <div class='img'>
+                        <img src="{{ url_for('static',filename='images/time_series/fig2.png') }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
+</html>

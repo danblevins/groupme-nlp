@@ -1,56 +1,62 @@
 {% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    {% block content %}
-    <head>
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/index.css') }}">
-        <link rel="icon" type="image/x-icon" href="../static/images/groupme.png">
-    </head>
-    <body>
-        <div class="intro">
-            <h1>A complete guide to your GroupMe friends' superlatives</h1>
-            <p>This is a super simple application for analyzing your GroupMe friend group and awarding annual superlatives. 
-                This app is built using Flask with template inheritance, Spacy, Pandas/NumPy, and Seaborn.
-            </p>
+{% block content %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}">
+    <link rel="icon" type="image/x-icon" href="../static/images/groupme.png">
+</head>
+
+<body>
+    <div class="intro">
+        <h1>A complete guide to your GroupMe friends' superlatives</h1>
+        <p>This is a super simple application for analyzing your GroupMe friend group and awarding annual superlatives.
+            This app is built using Flask with template inheritance, Spacy, NLTK, Pandas/NumPy, and Seaborn.
+        </p>
+    </div>
+    <div class="content">
+        <h2>Superlatives</h2>
+        <p>The available superlatives are:</p>
+        <ul>
+            <li>🕶Most Popular</li>
+            <li>🗣Most Talkative</li>
+            <li>📖Most Verbose</li>
+            <li>📱Most Social</li>
+            <li>🤷‍♂️Most Nicknames</li>
+            <li>✊Most Supportive</li>
+        </ul>
+        <h2>Examples</h2>
+        <p>Go to <a href="/superlatives">superlatives</a>, <a href="/timeseries">time series NLP analysis</a>, <a
+                href="/textual">textual NLP analysis</a></p>
+        <h2>Documentation</h2>
+        <p>Simply visit <a href="https://web.groupme.com/profile/export"
+                target="_blank">https://web.groupme.com/profile/export</a>,
+            click "Create Export", choose "Message Data", and select the group.
+        </p>
+        <p>Once the file is exported, download and unzip it, upload the <i>message.json</i> file to this site, and hit
+            the submit button.</p>
+        <br>
+        <br>
+        <div class="submit">
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" id="file" name="file">
+                <input type="submit">
+            </form>
         </div>
-        <div class="content">
-            <h2>Superlatives</h2>
-            <p>The available superlatives are:</p>
-            <ul>
-                <li>🕶Most Popular</li>
-                <li>🗣Most Talkative</li>
-                <li>📖Most Verbose</li>
-                <li>📱Most Social</li>
-                <li>🤷‍♂️Most Nicknames</li>
-                <li>✊Most Supportive</li>
-            </ul>
-            <h2>Examples</h2>
-            <p>Go to <a href="/superlatives">superlatives</a>, <a href="/timeseries">time series NLP analysis</a>, <a href="/textual">textual NLP analysis</a></p>
-            <h2>Documentation</h2>
-            <p>Simply visit <a href="https://web.groupme.com/profile/export" target="_blank">https://web.groupme.com/profile/export</a>,
-                click "Create Export", choose "Message Data", and select the group.
-            </p>
-            <p>Once the file is exported, download and unzip it, upload the <i>message.json</i> file to this site, and hit the submit button.</p>
-            <br>
-            <br>
-            <div class="submit">
-                <form action="" method="post" enctype="multipart/form-data">
-                    <input type="file" id="file" name="file">
-                    <input type="submit">
-                </form>
-            </div>
-            <br>
-            <br>
-            <div class="todo">
-                <h2>To-Do List</h2>
-                <code id="done">Random name generator</code><br>
-                <code id="done">Descriptive NLP Analysis</code><br>
-                <code id="done">Time Series NLP Analysis</code><br>
-                <code id="done">Textual NLP Analysis</code><br>
-                <code>Sentiment NLP Analysis</code><br>
-                <code>Interactive Visualizations</code>
-            </div>
+        <br>
+        <br>
+        <div class="todo">
+            <h2>To-Do List</h2>
+            <code id="done">Random name generator</code><br>
+            <code id="done">Descriptive NLP Analysis</code><br>
+            <code id="done">Time Series NLP Analysis</code><br>
+            <code id="done">Textual NLP Analysis</code><br>
+            <code>Sentiment NLP Analysis</code><br>
+            <code>Interactive Visualizations</code>
         </div>
-    </body>
-    {% endblock %}
+    </div>
+</body>
+{% endblock %}
+
 </html>

@@ -1,10 +1,10 @@
-# 💬 [GroupMe NLP](https://groupme-nlp.herokuapp.com/)
+# 💬 [GroupMe NLP](https://groupme-nlp.surge.sh/)
 
 ## About this Project
 
 This project allows the user to analyze their GroupMe friend group using NLP and data analysis.
 
-For more information visit: https://groupme-nlp.herokuapp.com/
+For more information visit: https://groupme-nlp.surge.sh/
 
 ## Inspiration
 
